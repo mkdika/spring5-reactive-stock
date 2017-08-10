@@ -40,13 +40,13 @@ import reactor.core.publisher.Flux;
 @RestController
 @RequestMapping("/api/stockprice")
 public class StockPriceController {
-    
+
     @RequestMapping(method = GET, value = "/{stockcode}")
-    Flux<String> fetchStockPrice(@PathVariable("stockcode") String stockcode) {        
+    Flux<String> fetchStockPrice(@PathVariable("stockcode") String stockcode) {
         return Flux
                 .interval(Duration.ofSeconds(3))
                 .map(l -> new Stock(stockcode, new Date(), getRandomPrice(stockcode)).toString()).log();
-                
+
     }
 
     private Integer getRandomPrice(String stockcode) {
