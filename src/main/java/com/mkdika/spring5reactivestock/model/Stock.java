@@ -38,7 +38,7 @@ public class Stock {
     private Date date;
     private Integer price;
     
-    private final SimpleDateFormat dtFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private final SimpleDateFormat dtFormat = new SimpleDateFormat("HHmmss");
 
     public Stock(String stockcode, Date date, Integer price) {
         this.stockcode = stockcode;
@@ -48,6 +48,6 @@ public class Stock {
     
     @Override
     public String toString() {
-        return dtFormat.format(new Date())+" UTC+7,"+price;
+        return dtFormat.format(new Date())+","+price;
     }
 }
