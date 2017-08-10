@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](/LICENSE)
 [![Build Status](https://travis-ci.org/mkdika/spring5-reactive-stock.svg?branch=master)](https://travis-ci.org/mkdika/spring5-reactive-stock)
 [![codecov](https://codecov.io/gh/mkdika/spring5-reactive-stock/branch/master/graph/badge.svg)](https://codecov.io/gh/mkdika/spring5-reactive-stock)
-[![codebeat badge](https://codebeat.co/badges/15eb2857-a8c5-40b1-9f63-b5581017b5a2)](https://codebeat.co/projects/github-com-mkdika-spring5-rest-api-master)
+[![codebeat badge](https://codebeat.co/badges/cdbb11e4-2290-4254-b3e3-95a0d5ae8565)](https://codebeat.co/projects/github-com-mkdika-spring5-reactive-stock-master)
 
 
 ### Framework & Libraries
@@ -17,7 +17,7 @@
 - [Vue.Js 2](https://vuejs.org/)
 - [Bootstrap3](http://getbootstrap.com/)
 - [Chart.Js](http://www.chartjs.org/)
-- [Vue Chart.Js](https://github.com/kevinongko/vue-chart-js)
+- [Vue Chart.Js](https://github.com/kevinongko/vue-chart-js) by [Kevin Ongko](https://github.com/kevinongko)
 
 
 ### Localhost Test

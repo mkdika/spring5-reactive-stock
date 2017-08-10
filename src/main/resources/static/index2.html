@@ -27,36 +27,27 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="panel panel-default ">
                     <div class="panel-body">                    
-                        <vue-chart type="line" :data="dataFB" :options="fbOption"></vue-chart>
-                        
-<!--                        <line-chart :data="dataFB" :min="160" :max="190" width="95%"
+                        <line-chart :data="dataFB" :min="160" :max="190" width="95%"
                             :library="{title:'Facebook',explorer: {axis: 'horizontal',keepInBounds: false},bar: {groupWidth: 5},chartArea:{width:'90%',height:'85%'}}">
-
-                        </line-chart>-->
                 </div>
             </div> 
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="panel panel-default">
-                <div class="panel-body">
-                    <vue-chart type="line" :data="dataMSFT" :options="msOption"></vue-chart>
-                    
-<!--                    <line-chart :data="dataMSFT" :min="70" :max="100" width="95%"
+                <div class="panel-body">                   
+                    <line-chart :data="dataMSFT" :min="70" :max="100" width="95%"
                         :library="{title:'Microsoft',explorer: {axis: 'horizontal',keepInBounds: false},bar: {groupWidth: 5},chartArea:{width:'90%',height:'85%'}}">
-                </line-chart>-->
+                </line-chart>
             </div>
         </div>
     </div>
             
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="panel panel-default ">
-                    <div class="panel-body">   
-                        <vue-chart type="line" :data="dataGOOGL" :options="goOption"></vue-chart>
-                        
-<!--                        <line-chart :data="dataGOOGL" :min="930" :max="960" width="95%"
+                    <div class="panel-body">                    
+                        <line-chart :data="dataGOOGL" :min="930" :max="960" width="95%"
                             :library="{title:'Google',explorer: {axis: 'horizontal',keepInBounds: false},bar: {groupWidth: 5},chartArea:{width:'90%',height:'85%'}}">
-                    </line-chart>-->
                 </div>
             </div> 
         </div>
@@ -64,11 +55,8 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="panel panel-default ">
                     <div class="panel-body">                    
-                        <vue-chart type="line" :data="dataAAPL" :options="apOption"></vue-chart>
-                        
-<!--                        <line-chart :data="dataAAPL" :min="150" :max="180" width="95%"
+                        <line-chart :data="dataAAPL" :min="150" :max="180" width="95%"
                             :library="{title:'Apple',explorer: {axis: 'horizontal',keepInBounds: false},bar: {groupWidth: 5},chartArea:{width:'90%',height:'85%'}}">
-                            </line-chart>-->
                 </div>
             </div> 
         </div>
@@ -80,116 +68,27 @@
 crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/vue@2.4.2"></script>
-<script src="https://unpkg.com/vue-chart-js@1.2.1"></script>
+<!--<script src="https://unpkg.com/vue-chart-js"></script>-->
+<!--<script src="https://unpkg.com/chart.js@2.5.0/dist/Chart.bundle.js"></script>-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://unpkg.com/chartkick@2.2.3"></script>
+<script src="https://unpkg.com/vue-chartkick@0.2.0/dist/vue-chartkick.js"></script>
 <script>
-    Vue.use(VueChart.default)
     var app = new Vue({
-        el: "#app",        
+        el: "#app",
         data: {
-            fbOption: {
-                title: {
-                    display: true,
-                    text: 'Facebook'
-                },
-                legend: {
-                    display: false                    
-                },
-                scales: {                   
-                    yAxes: [{
-                        display: true,
-                        ticks: {
-                            beginAtZero: false,
-                            steps: 5,
-                            stepValue: 5,
-                            min: 160,
-                            max: 190                                
-                        }
-                    }]
-                },
-            },
-            msOption: {
-                title: {
-                    display: true,
-                    text: 'Microsoft'
-                },
-                legend: {
-                    display: false                    
-                },
-                scales: {                   
-                    yAxes: [{
-                        display: true,
-                        ticks: {
-                            beginAtZero: false,
-                            steps: 5,
-                            stepValue: 5,
-                            min: 70,
-                            max: 100                                
-                        }
-                    }]
-                },
-            },
-            goOption: {
-                title: {
-                    display: true,
-                    text: 'Google'
-                },
-                legend: {
-                    display: false                    
-                },
-                scales: {                   
-                    yAxes: [{
-                        display: true,
-                        ticks: {
-                            beginAtZero: false,
-                            steps: 5,
-                            stepValue: 5,
-                            min: 930,
-                            max: 960                                
-                        }
-                    }]
-                },
-            },
-            apOption: {
-                title: {
-                    display: true,
-                    text: 'Apple'
-                },
-                legend: {
-                    display: false                    
-                },
-                scales: {                   
-                    yAxes: [{
-                        display: true,
-                        ticks: {
-                            beginAtZero: false,
-                            steps: 5,
-                            stepValue: 5,
-                            min: 150,
-                            max: 180                                
-                        }
-                    }]
-                },
-            },
-            dataFB: {                
-                labels: [],
-                datasets: [{           
-                    data: []
-                }]
-            },
+            dataFB: [],
             dataMSFT: [],
             dataGOOGL: [],
             dataAAPL: []
-        },methods: {
+        }, methods: {
             getFacebook: function () {
                 var vue = this;
                 var stringEventSource = new EventSource('/api/stockprice/FB');
                 stringEventSource.onmessage = function (e) {
-                    var array = e.data.split(",")
-                    vue.dataFB.labels.push(array[0])
-                    vue.dataFB.datasets[0].data.push(parseInt(array[1]))
-//                    console.log('label: '+array[0]+', value: '+parseInt(array[1]))
-                    console.log(vue.dataFB.labels)
-                    console.log(vue.dataFB.datasets[0].data)
+                    var array = e.data.split(",");
+                    var element = [array[0], parseInt(array[1])]
+                    vue.dataFB.push(element)
                 }
             },
             getMicrosoft: function () {
