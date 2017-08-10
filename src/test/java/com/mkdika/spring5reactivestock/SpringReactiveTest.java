@@ -63,6 +63,5 @@ public class SpringReactiveTest {
         public void accept(String t) {
             System.out.println("XXX - Receive: "+t);
         }        
-    }
-    
+    }    
 }

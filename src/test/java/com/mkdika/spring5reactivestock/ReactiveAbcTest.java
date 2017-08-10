@@ -23,12 +23,10 @@
  */
 package com.mkdika.spring5reactivestock;
 
-import java.util.function.Consumer;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 /**
@@ -37,34 +35,6 @@ import reactor.test.StepVerifier;
  */
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ReactiveAbcTest {
-    
-//    @Test
-//    public void testAbcImperative() {
-//        System.out.println("Test Imperative:");
-//        int a = 2;
-//        System.out.println("a: "+a);
-//        int b = 3;
-//        System.out.println("b: "+b);
-//        int c = a + b;
-//        System.out.println("c: "+ c);
-//        b = 4;
-//        System.out.println("b: "+ b);
-//        System.out.println("c: "+ c);       
-//        System.out.println("");
-//    }
-    
-//    @Test
-//    public void testAbcReactive() {
-//        System.out.println("Test Reactive:");                
-//        Mono<Integer> monoA = Mono.just(2);        
-//        System.out.println("a: " + monoA.block());
-//                
-//        Mono<Integer> monoB = Mono.just(3);                              
-//        System.out.println("b: " + monoB.block());              
-//        System.out.println(""); 
-//        
-//        Mono<Void> abc= Mono.empty();
-//    }
     
     @Test
     public void empty() {
@@ -77,13 +47,5 @@ public class ReactiveAbcTest {
     
     Flux<String> emptyFlux() {
         return Flux.empty();
-    }
-    
-//    class SubcriberC implements Consumer<Integer> {
-//        @Override
-//        public void accept(Integer i) {
-//            System.out.println("C: " + i);
-//        }        
-//    }
-    
+    }  
 }

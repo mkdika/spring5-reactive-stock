@@ -13,10 +13,10 @@
 - [Vue.Js 2](https://vuejs.org/)
 - [Bootstrap3](http://getbootstrap.com/)
 - [Chart.Js](http://www.chartjs.org/)
-- [Chart.Js Wrapper]()
+- [Vue Chart.Js](https://github.com/kevinongko/vue-chart-js)
 
 ### Localhost Test
-- Runt the driver class `com.mkdika.spring5reactivestock.Spring5ReactivestockApplication`
+- Run the driver class `com.mkdika.spring5reactivestock.Spring5ReactivestockApplication`
 - [Localhost Demo](http://localhost:8123/)
 
 ### Screenshots

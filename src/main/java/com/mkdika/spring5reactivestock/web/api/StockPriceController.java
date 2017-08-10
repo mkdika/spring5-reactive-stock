@@ -44,7 +44,7 @@ public class StockPriceController {
     @RequestMapping(method = GET, value = "/{stockcode}")
     Flux<String> fetchStockPrice(@PathVariable("stockcode") String stockcode) {        
         return Flux
-                .interval(Duration.ofSeconds(5))
+                .interval(Duration.ofSeconds(3))
                 .map(l -> new Stock(stockcode, new Date(), getRandomPrice(stockcode)).toString()).log();
                 
     }
