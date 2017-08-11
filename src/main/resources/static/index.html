@@ -11,16 +11,16 @@
         <div id="app">
             <div class="pager col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="btn-group btn-group">
-                    <button @click.prevent="getFacebook" class="btn btn-primary"  style="width: 200px;">Get Latest Facebook Price</button>                
+                    <button id="btnFb" @click.prevent="getFacebook" class="btn btn-primary"  style="width: 200px;" :disabled="disabledFb">Get Latest Facebook Price</button>                
                 </div>
                 <div class="btn-group btn-group">
-                    <button @click.prevent="getMicrosoft" class="btn btn-danger" style="width: 200px;">Get Latest Microsoft Price</button>
+                    <button id="btnMs" @click.prevent="getMicrosoft" class="btn btn-danger" style="width: 200px;" :disabled="disabledMs">Get Latest Microsoft Price</button>
                 </div>
                 <div class="btn-group btn-group">
-                    <button @click.prevent="getGoogle" class="btn btn-success" style="width: 200px;">Get Latest Google Price</button>
+                    <button id="btnGo" @click.prevent="getGoogle" class="btn btn-success" style="width: 200px;" :disabled="disabledGo">Get Latest Google Price</button>
                 </div>
                 <div class="btn-group btn-group">
-                    <button @click.prevent="getApple" class="btn btn-default" style="width: 200px;">Get Latest Apple Price</button>
+                    <button id="btnAp" @click.prevent="getApple" class="btn btn-default" style="width: 200px;" :disabled="disabledAp">Get Latest Apple Price</button>
                 </div>
             </div>
 
@@ -81,11 +81,16 @@ crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/vue@2.4.2"></script>
 <script src="https://unpkg.com/vue-chart-js@1.3.0"></script>
+<script src="js/custom.js"></script>
 <script>
     Vue.use(VueChart.default)
     var app = new Vue({
         el: "#app",        
         data: {
+            disabledFb: false,
+            disabledMs: false,
+            disabledGo: false,
+            disabledAp: false,            
             fbOption: {
                 scaleShowVerticalLines: false,
                 title: {
@@ -240,6 +245,7 @@ crossorigin="anonymous"></script>
         },methods: {
             getFacebook: function () {
                 var vue = this;
+                vue.disabledFb = true;
                 var stringEventSource = new EventSource('/api/stockprice/FB');
                 stringEventSource.onmessage = function (e) {
                     var array = e.data.split(",")
@@ -249,6 +255,7 @@ crossorigin="anonymous"></script>
             },
             getMicrosoft: function () {
                 var vue = this;
+                vue.disabledMs = true;
                 var stringEventSource = new EventSource('/api/stockprice/MSFT');
                 stringEventSource.onmessage = function (e) {
                     var array = e.data.split(",")
@@ -258,6 +265,7 @@ crossorigin="anonymous"></script>
             },
             getGoogle: function () {
                 var vue = this;
+                vue.disabledGo = true;
                 var stringEventSource = new EventSource('/api/stockprice/GOOGL');
                 stringEventSource.onmessage = function (e) {
                     var array = e.data.split(",")
@@ -267,6 +275,7 @@ crossorigin="anonymous"></script>
             },
             getApple: function () {
                 var vue = this;
+                vue.disabledAp = true;
                 var stringEventSource = new EventSource('/api/stockprice/AAPL');
                 stringEventSource.onmessage = function (e) {
                     var array = e.data.split(",")
