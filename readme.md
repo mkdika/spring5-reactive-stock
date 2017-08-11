@@ -4,6 +4,7 @@
 [![codecov](https://codecov.io/gh/mkdika/spring5-reactive-stock/branch/master/graph/badge.svg)](https://codecov.io/gh/mkdika/spring5-reactive-stock)
 [![codebeat badge](https://codebeat.co/badges/cdbb11e4-2290-4254-b3e3-95a0d5ae8565)](https://codebeat.co/projects/github-com-mkdika-spring5-reactive-stock-master)
 
+Spring 5 Reactive Example, in dummy stock price feed stream.
 
 ### Framework & Libraries
 - [Java 8 (JDK 8u131)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
