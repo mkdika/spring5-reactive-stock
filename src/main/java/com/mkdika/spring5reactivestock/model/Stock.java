@@ -50,4 +50,5 @@ public class Stock {
     public String toString() {
         return dtFormat.format(new Date())+","+price;
     }
+    
 }
